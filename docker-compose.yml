@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   vintage-photo-editor:
     build: .
@@ -7,3 +5,4 @@ services:
       - "8080:8000"
     container_name: vintage-photo-editor
     restart: unless-stopped
+
