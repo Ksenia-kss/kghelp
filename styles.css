@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #ccc;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.app {
+    padding: 15px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 8px 12px;
+    border: 1px solid #666;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.controls input[type="file"] {
+    display: none;
+}
+
+.preview {
+    background: #eee;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+#canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#noImage {
+    color: #666;
+}
+
+.settings {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.setting {
+    margin-bottom: 12px;
+}
+
+.setting label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.setting input[type="range"] {
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+.navigation button {
+    padding: 6px 10px;
+    border: 1px solid #666;
+    background: #ddd;
+    cursor: pointer;
+}
+
+#counter {
+    padding: 0 10px;
+}
+
+@media (max-width: 600px) {
+    .preview {
+        height: 200px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+}

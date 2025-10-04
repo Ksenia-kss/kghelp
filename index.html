@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Винтажный фото редактор</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Винтажный фото редактор</h1>
+        </header>
+
+        <div class="app">
+            <!-- Панель управления -->
+            <div class="controls">
+                <input type="file" id="imageInput" accept="image/*" multiple>
+                <button onclick="document.getElementById('imageInput').click()">Загрузить фото</button>
+                
+                <input type="file" id="scratchInput" accept="image/*" style="display:none">
+                <button onclick="document.getElementById('scratchInput').click()">Загрузить царапины</button>
+                
+                <button id="saveBtn">Сохранить</button> 
+            </div>
+
+            <!-- Основная область -->
+            <div class="main">
+                <!-- Предпросмотр -->
+                <div class="preview">
+                    <canvas id="canvas"></canvas>
+                    <div id="noImage">Загрузите изображение</div>
+                </div>
+
+                <!-- Настройки -->
+                <div class="settings">
+                    <div class="setting">
+                        <label>Шум: <span id="noiseValue">30</span></label>
+                        <input type="range" id="noiseSlider" min="0" max="100" value="30">
+                    </div>
+
+                    <div class="setting">
+                        <label>Сепия: <span id="sepiaValue">60</span></label>
+                        <input type="range" id="sepiaSlider" min="0" max="100" value="60">
+                    </div>
+
+                    <div class="setting">
+                        <label>Царапины: <span id="scratchValue">20</span></label>
+                        <input type="range" id="scratchSlider" min="0" max="100" value="20">
+                    </div>
+
+                    <!-- Настройки царапин -->
+                    <div class="scratch-settings">
+                        <div class="setting">
+                            <label>Плотность: <span id="densityValue">30</span></label>
+                            <input type="range" id="densitySlider" min="1" max="100" value="30">
+                        </div>
+
+                        <div class="setting">
+                            <label>Размер: <span id="sizeValue">30</span></label>
+                            <input type="range" id="sizeSlider" min="1" max="100" value="30">
+                        </div>
+
+                        <div class="setting">
+                            <label>Распределение: <span id="distributionValue">50</span></label>
+                            <input type="range" id="distributionSlider" min="1" max="100" value="50">
+                        </div>
+                    </div>
+
+                    <button id="applyBtn">Применить эффекты</button>
+                    <button id="resetBtn">Сбросить настройки</button>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="navigation">
+                <button id="prevBtn">← Назад</button> 
+                <span id="counter">0/0</span>
+                <button id="nextBtn">Вперед →</button> 
+                <button id="originalBtn">Исходное</button> 
+                <button id="processedBtn">Обработанное</button> 
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
