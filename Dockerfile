@@ -1,11 +1,12 @@
-FROM python:3.9-alpine
+FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY index.html .
-COPY script.js .
-COPY style.css .
-COPY scratches/ ./scratches/
+COPY . .
+
+RUN mkdir -p scratches
 
 EXPOSE 8000
-CMD ["python", "-m", "http.server", "8000"]
+
+CMD ["python", "-m", "http.server", "8000", "--bind", "0.0.0.0"]
+
